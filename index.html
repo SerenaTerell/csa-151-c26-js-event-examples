@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Events - Examples</title>
+  
+  <style>
+    
+    body {
+      display: grid;
+      /* place-items: center; */
+      align-items: center;
+      justify-items: center;
+      background: #ecf0f1;
+      
+    }
+    
+    body, button {
+      font-family: "Encode Sans", Helvetica Neue, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    
+    #page {
+      width: 50vw;
+      background: #fff;
+      padding: 2vw;
+    }
+    
+    #content {
+      border: 5px solid #2980b9;
+      padding: 2vw;
+    }
+    
+    .highlight {
+      background: #f1c40f;
+    }
+    
+    button {
+      background: #27ae60;
+      color: #fff;
+      color: white;
+      border: none;
+      padding: 1vw;
+      margin-top: 1vw;
+    }
+    
+    button:hover {
+      background: #2ecc71;
+    }
+    
+    img {
+      width: 100%;
+    }
+  </style>
+  
+
+</head>
+<body>
+<div id="page">
+  
+  <h1>Events - Examples</h1>
+  
+  <p>Bitte Debugger öffnen</p>
+  
+  <div id="content">
+    <img src="https://media.giphy.com/media/VxbvpfaTTo3le/giphy.gif" alt="">
+    <!--<img src="http://placekitten.com/500/250" alt="">-->
+  </div>
+  <button id="bob">Treat Me</button>
+  <button id="fog">Why????</button>
+  <button id="say_it">Say it</button>
+  
+  
+  <script>
+
+    const button = document.getElementById('bob');
+
+    button.addEventListener('click', () => {
+      Promise.resolve().then(() => console.log('Promise 1'));
+      console.log('Listener 1');
+    });
+
+    button.addEventListener('click', () => {
+      Promise.resolve().then(() => console.log('Promise 2'));
+      console.log('Listener 2');
+    });
+
+    // button.click();
+    const fog = document.getElementById('fog');
+    fog.addEventListener('click', () => {
+      while (true);
+    });
+
+    const say_it = document.getElementById('say_it');
+    say_it.addEventListener('click', () => {
+      say_it.textContent = '.... sooo 😻';
+    });
+
+
+  </script>
+  
+</div>
+</body>
+</html>
